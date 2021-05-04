@@ -1,7 +1,14 @@
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
 server:
   port: 8761
+  
 
 eureka:
+  server:
+    wait-time-in-ms-when-sync-empty: 0
   renewalPercentThreshold: 0.85
   instance:
     hostname: localhost
