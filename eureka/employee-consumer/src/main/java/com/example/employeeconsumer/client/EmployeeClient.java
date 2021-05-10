@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "employee-producer", configuration = FeignConfig.class)
+@FeignClient(name = "employee-producer", configuration = FeignConfig.class, fallback = EmployeeClientFallback.class)
 public interface EmployeeClient {
     @RequestMapping(method = RequestMethod.GET, value = "/employee")
     EmployeeDto getEmployee();
