@@ -7,11 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Component
+//@Component
 public class EmployeeClientFallback implements EmployeeClient{
     @Override
     public EmployeeDto getEmployee() {
         System.out.println("fallback call");
+
         return EmployeeDto.builder()
                 .name("fallback")
                 .designation("employee")
