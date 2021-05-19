@@ -6,7 +6,7 @@ metadata:
     app: k8s-demo-app
   name: k8s-demo-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: k8s-demo-app
@@ -18,17 +18,9 @@ spec:
         app: k8s-demo-app
     spec:
       containers:
-      - image: pcdinh/demo-kube-app:1.0
+      - image: pcdinh/demo-kube-app:latest
         name: k8s-demo-app
         resources: {}
-        livenessProbe:
-          httpGet:
-            path: /actuator/health/liveness
-            port: 8080
-        readinessProbe:
-          httpGet:
-            path: /actuator/health/readiness
-            port: 8080
         lifecycle:
           preStop:
             exec:

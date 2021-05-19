@@ -15,15 +15,15 @@ feign:
     enabled: true
   circuitbreaker:
     enabled: true
-#  client:
-#    config:
-#      employee-producer:
-#        metrics.enable: true
-#        loggerLevel: full
-#        retryer: com.example.employeeconsumer.config.CustomRetryer
-#        errorDecoder: com.example.employeeconsumer.config.SampleErrorDecode
-#        capabilities:
-#          - feign.micrometer.MicrometerCapability
+  client:
+    config:
+      employee-producer:
+        metrics.enable: true
+        loggerLevel: full
+        retryer: com.example.employeeconsumer.config.CustomRetryer
+        errorDecoder: com.example.employeeconsumer.config.SampleErrorDecode
+        capabilities:
+          - feign.micrometer.MicrometerCapability
 logging:
   level:
     com:

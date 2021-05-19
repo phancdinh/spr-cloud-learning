@@ -19,6 +19,8 @@ curl localhost:8080
 
 ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=localhost:5000/apps/demo
 
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=pcdinh/demo-kube-app:1.0
+
 docker tag k8s-demo-app:0.0.1-SNAPSHOT pcdinh/demo-kube-app:1.0
 
 docker push pcdinh/demo-kube-app:1.0
@@ -61,6 +63,11 @@ kubectl create deployment k8s-demo-app --image localhost:5000/apps/demo -o yaml 
 kubectl create service clusterip k8s-demo-app --tcp 80:8080 -o yaml --dry-run=client > k8s/service.yaml
 
 kubectl apply -f ./k8s
+
+kubectl create deployment student-client --image  -o yaml --dry-run=client > k8s/deployment.yaml
+
+kubectl create service clusterip k8s-demo-app --tcp 80:8080 -o yaml --dry-run=client > k8s/service.yaml
+
 
 
 expose

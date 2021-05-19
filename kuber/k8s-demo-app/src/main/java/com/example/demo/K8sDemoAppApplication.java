@@ -13,10 +13,12 @@ public class K8sDemoAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(K8sDemoAppApplication.class, args);
     }
+
     @GetMapping("/")
     public String hello() {
         return "Hello World";
     }
+
     @GetMapping("/student")
     public Student student() {
         return Student.builder()
