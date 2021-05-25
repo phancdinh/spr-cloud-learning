@@ -36,10 +36,12 @@ public class StudentController {
     public StudentDto student24() {
         return studentClient.getStudent();
     }
+
     @GetMapping(value = "/student2")
     public String student22() {
         return rest.getForObject("http://k8s-demo-app/student", String.class);
     }
+
     @GetMapping(value = "/services/{name}")
     public List<ServiceInstance> service(@PathVariable String name) {
         return discoveryClient.getInstances(name);
