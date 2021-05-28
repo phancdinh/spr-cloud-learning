@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: employee-consumer
+
+server:
+  port: 8082
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+feign:
+  metrics:
+    enabled: true
+  circuitbreaker:
+    enabled: true
+  client:
+    config:
+      employee-producer:
+        metrics.enable: true
+        loggerLevel: full
+        retryer: com.example.employeeconsumer.config.CustomRetryer
+        errorDecoder: com.example.employeeconsumer.config.SampleErrorDecode
+        capabilities:
+          - feign.micrometer.MicrometerCapability
+logging:
+  level:
+    com:
+      example:
+        employeeconsumer:
+          client:
+            EmployeeClient: DEBUG

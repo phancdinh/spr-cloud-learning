@@ -1,0 +1,37 @@
+#spring.cloud.kubernetes.discovery.include-not-ready-addresses=true
+#spring.cloud.kubernetes.discovery.all-namespaces=true
+#spring.cloud.kubernetes.reload.enabled=true
+spring:
+  application:
+    name: student-client
+
+feign:
+  client:
+    config:
+      k8s-demo-app:
+        metrics.enabled: true
+        loggerLevel: full
+  
+student-producer:
+  ribbon:
+    eureka:
+      enable: false
+    listOfServers: http://127.0.0.1:62636
+    ServerListRefreshInterval: 15000
+
+ribbon:
+  eureka:
+    enabled: false
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+    org:
+      springframework:
+        web: DEBUG
+        security: DEBUG
+    com:
+      example:
+        demo: DEBUG
+        
