@@ -15,3 +15,7 @@ management:
 
 server:
   shutdown: graceful
+  
+app:
+  demo-env: ${demo-env}
+  value: default-value

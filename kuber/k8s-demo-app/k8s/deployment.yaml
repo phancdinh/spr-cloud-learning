@@ -5,6 +5,7 @@ metadata:
   labels:
     app: k8s-demo-app
   name: k8s-demo-app
+  namespace: develop
 spec:
   replicas: 2
   selector:
@@ -20,6 +21,8 @@ spec:
       containers:
       - image: pcdinh/demo-kube-app:latest
         name: k8s-demo-app
+        env:
+          - name: demo-env
         resources: {}
         lifecycle:
           preStop:
