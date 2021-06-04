@@ -8,7 +8,7 @@ brew install minikube
 ## Start minikube:
 minikube start
 ## If you already have kubectl installed, you can now use it to access your shiny new cluster
-kubectl get po -A
+kubectl get pod -A
 ## Kubernetes Dashboard for managing your cluster
 minikube dashboard
 
@@ -72,3 +72,4 @@ kubectl create service clusterip k8s-demo-app --tcp 80:8080 -o yaml --dry-run=cl
 
 expose
 kubectl patch service k8s-demo-app -p '{"spec": {"type": "LoadBalancer", "externalIPs":["172.18.0.2"]}}'
+kubectl port-forward -n develop service/k8s-demo-app 8080:80
