@@ -62,7 +62,7 @@ kubectl create deployment k8s-demo-app --image localhost:5000/apps/demo -o yaml 
 
 kubectl create service clusterip k8s-demo-app --tcp 80:8080 -o yaml --dry-run=client > k8s/service.yaml
 
-kubectl apply -f ./k8s
+kubectl -n develop apply -f ./k8s
 
 kubectl create deployment student-client --image  -o yaml --dry-run=client > k8s/deployment.yaml
 

@@ -1,0 +1,12 @@
+student-producer:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:62636
+    ServerListRefreshInterval: 15000
+student-producer2:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:62636
+    ServerListRefreshInterval: 15000

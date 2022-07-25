@@ -1,0 +1,1 @@
+https://javadoc.io/doc/com.google.code.gson/gson/latest/com.google.gson/com/google/gson/annotations/package-summary.html

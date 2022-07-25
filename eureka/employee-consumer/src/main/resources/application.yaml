@@ -15,17 +15,26 @@ feign:
     enabled: true
   circuitbreaker:
     enabled: true
-  client:
-    config:
-      employee-producer:
-        metrics.enable: true
-        loggerLevel: full
-        retryer: com.example.employeeconsumer.config.CustomRetryer
-        errorDecoder: com.example.employeeconsumer.config.SampleErrorDecode
-        capabilities:
-          - feign.micrometer.MicrometerCapability
+  okhttp:
+    enabled: true
+#  client:
+#    config:
+#      employee-producer:
+#        metrics.enable: true
+#        loggerLevel: full
+#        retryer: com.example.employeeconsumer.config.CustomRetryer
+#        errorDecoder: com.example.employeeconsumer.config.SampleErrorDecode
+#        capabilities:
+#          - feign.micrometer.MicrometerCapability
 logging:
   level:
+    root: INFO
+    web: ERROR
+    org:
+      springframework:
+        web: ERROR
+        security: ERROR
+        data: ERROR
     com:
       example:
         employeeconsumer:

@@ -1,0 +1,9 @@
+spring:
+  mvc:
+    converters:
+      # Preferred use of Gson
+      preferred-json-mapper: gson
+  gson:
+    field-naming-policy: lower_case_with_underscores
+    serialize-nulls: true
+    pretty-printing: true

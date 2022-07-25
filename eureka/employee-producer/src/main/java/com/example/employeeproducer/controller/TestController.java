@@ -1,18 +1,27 @@
 package com.example.employeeproducer.controller;
 
 import com.example.employeeproducer.facade.dto.EmployeeDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.logging.Logger;
+
 @RestController
+@Slf4j
 public class TestController {
+    private static final Logger LOG = Logger.getLogger(TestController.class.getName());
+
     @GetMapping(value = "/employee")
     public EmployeeDto firstPage() {
-        System.out.println("handle request load balancing");
+
+        LOG.info("handle request load balancing");
+        log.info("handle request load balancing2");
         int num = random(200, 400);
-        int result = num % 5;
+//        int result = num % 5;
+        int result = 6;
 
         switch (result) {
             case 0:
