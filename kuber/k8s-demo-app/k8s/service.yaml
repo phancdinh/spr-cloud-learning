@@ -5,6 +5,7 @@ metadata:
   labels:
     app: k8s-demo-app
   name: k8s-demo-app
+  namespace: develop
 spec:
   ports:
   - name: 80-8080

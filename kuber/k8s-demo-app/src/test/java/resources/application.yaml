@@ -2,7 +2,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   profiles:
-    active: ${NAMESPACE}
+    active: local
   application:
     name: k8s-demo-app
   config:

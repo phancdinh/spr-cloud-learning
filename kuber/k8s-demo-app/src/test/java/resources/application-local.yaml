@@ -1,0 +1,17 @@
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+server:
+  shutdown: graceful
+
+app:
+  demo-env: ${demo-env}
+  value: default-value

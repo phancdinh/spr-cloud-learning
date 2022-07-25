@@ -5,6 +5,7 @@ metadata:
   labels:
     app: k8s-demo-app
   name: k8s-demo-app
+  namespace: develop
 spec:
   replicas: 2
   selector:
@@ -17,12 +18,22 @@ spec:
       labels:
         app: k8s-demo-app
     spec:
+      serviceAccountName: demoappserviceaccount
       containers:
       - image: pcdinh/demo-kube-app:latest
         name: k8s-demo-app
+        env:
+          - name: demo-env
+            value: demoa--app-change
+          - name: NAMESPACE
+            value: develop
+        envFrom:
+          - secretRef:
+              name: k8s-demo-app-secrets
         resources: {}
         lifecycle:
           preStop:
             exec:
               command: [ "sh", "-c", "sleep 10" ]
+  
 status: {}

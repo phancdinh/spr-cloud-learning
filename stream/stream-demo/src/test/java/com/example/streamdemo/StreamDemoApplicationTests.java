@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.example.streamdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//@SpringBootTest
-class K8sDemoAppApplicationTests {
+@SpringBootTest
+class StreamDemoApplicationTests {
 
     @Test
     void contextLoads() {

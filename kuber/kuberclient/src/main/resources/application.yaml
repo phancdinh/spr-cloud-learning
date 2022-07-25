@@ -12,16 +12,16 @@ feign:
         metrics.enabled: true
         loggerLevel: full
   
-student-producer:
-  ribbon:
-    eureka:
-      enable: false
-    listOfServers: http://127.0.0.1:62636
-    ServerListRefreshInterval: 15000
-
-ribbon:
-  eureka:
-    enabled: false
+#student-producer:
+#  ribbon:
+#    eureka:
+#      enable: false
+#    listOfServers: http://127.0.0.1:62636
+#    ServerListRefreshInterval: 15000
+#
+#ribbon:
+#  eureka:
+#    enabled: false
 
 logging:
   level:

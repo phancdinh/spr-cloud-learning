@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    kubernetes:
+      config:
+        name: k8s-demo-app
+        namespace: local
